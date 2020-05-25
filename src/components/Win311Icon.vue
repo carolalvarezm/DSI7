@@ -22,6 +22,7 @@ export default {
       document.querySelector(`.${this.title}`).classList.toggle("selected");
       this.$emit("seleccionado", this.title);
       this.$emit("seleccionar", this.title);
+      this.selected = true;
     }
   }
 };
