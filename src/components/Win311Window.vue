@@ -10,7 +10,7 @@
       <p>Help</p>
     </div>
     <div class="iconos">
-    <win311-icon v-for="u in iconos" :key="u" :Nombre="u" ></win311-icon>
+    <win311-icon v-for="u in iconos" :key="u" :Nombre="u" @seleccionado="unselect"></win311-icon>
     </div>
     <div class="ayuda">
       Select app to open...
@@ -35,6 +35,11 @@ export default {
       iconos: tipos[this.Tipo].icons,
       title: tipos[this.Tipo].title
     };
+  },
+  methods: {
+    unselect: function (title) {
+      this.$emit("seleccionar", title);
+    }
   }
 
 };
