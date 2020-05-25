@@ -6,10 +6,11 @@
         "serve": "vue-cli-service serve",
         "build": "vue-cli-service build",
         "lint": "vue-cli-service lint",
-        "deploy": "gh-pages -d build"
+        "deploy": "npx gh-pages -d dist"
     },
     "dependencies": {
         "core-js": "^3.6.4",
+        "gh-pages": "^2.2.0",
         "vue": "^2.6.11"
     },
     "repository": {
