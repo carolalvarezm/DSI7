@@ -1,7 +1,7 @@
 <template>
-  <div class='icono'>
+  <div class='icono' v-on:click="select($event)">
     <div class='imagen' v-html='image'></div>
-    <p>{{title}}</p>
+    <span :class="title">{{title}}</span>
   </div>
 </template>
 
@@ -16,11 +16,17 @@ export default {
       image: `<img src='${require(`../assets/icons/${this.Nombre}.png`)}'/>`,
       title: this.Nombre
     };
+  },
+  methods: {
+    select: function (event) {
+      console.log(this.title);
+      document.querySelectorAll(`.${this.title}`).forEach(element => element.classList.toggle("selected"));
+    }
   }
 };
 </script>
 
-<style scoped>
+<style scoped lang="postcss">
 .icono{
   margin-left:10px;
 }
@@ -28,9 +34,12 @@ img{
   width:100px;
   height:100px;
 }
-p{
+span{
   margin-top:5px;
   text-align:center;
   text-transform: capitalize;
 }
+.selected{
+    background:blue;
+  }
 </style>

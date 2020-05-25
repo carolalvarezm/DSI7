@@ -1,8 +1,8 @@
 <template>
   <div id='app'>
-    <win311-icon Nombre='msdos' id="iconoexterior"></win311-icon>
-    <win311-window Tipo='cpanel' id="ventana1"></win311-window>
-    <win311-window Tipo='apps' id="ventana2"></win311-window>
+    <win311-icon Nombre='msdos' id="iconoexterior" ></win311-icon>
+    <win311-window Tipo='cpanel' id="ventana1" ></win311-window>
+    <win311-window Tipo='apps' id="ventana2" ></win311-window>
   </div>
 </template>
 
@@ -32,7 +32,7 @@ background: #079582;
 }
 #ventana1{
   position:relative;
-  z-index:-1;
+  z-index:1;
   left:400px;
 }
 #ventana2{
