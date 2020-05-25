@@ -1,22 +1,23 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id='app'>
+    <win311-icon Nombre='msdos'></win311-icon>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Win311Icon from './components/Win311Icon.vue'
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    'win311-icon': Win311Icon
   }
 }
 </script>
 
 <style>
+body {
+background: turquoise;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
