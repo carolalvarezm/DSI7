@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: 'Win311Icon',
+  name: "Win311Icon",
   props: {
     Nombre: String
   },
@@ -15,17 +15,22 @@ export default {
     return {
       image: `<img src='${require(`../assets/icons/${this.Nombre}.png`)}'/>`,
       title: this.Nombre
-    }
+    };
   }
-}
+};
 </script>
 
 <style scoped>
+.icono{
+  margin-left:10px;
+}
 img{
   width:100px;
   height:100px;
 }
 p{
+  margin-top:5px;
   text-align:center;
+  text-transform: capitalize;
 }
 </style>
