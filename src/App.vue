@@ -1,8 +1,8 @@
 <template>
   <div id='app'>
-    <win311-icon Nombre='msdos' id="iconoexterior" @seleccionar="unselect"></win311-icon>
-    <win311-window Tipo='cpanel' id="ventana1" @seleccionar="unselect"></win311-window>
-    <win311-window Tipo='apps' id="ventana2" @seleccionar="unselect"></win311-window>
+    <win311-icon Nombre='msdos' id="iconoexterior" @alert="alert"></win311-icon>
+    <win311-window Tipo='cpanel' id="ventana1" @alert="alert"></win311-window>
+    <win311-window Tipo='apps' id="ventana2" @alert="alert"></win311-window>
   </div>
 </template>
 
@@ -16,7 +16,7 @@ export default {
     "win311-window": Win311Window
   },
   methods: {
-    unselect: function (title) {
+    alert: function (title) {
       alert(`Has seleccionado ${title}`);
     }
   }
