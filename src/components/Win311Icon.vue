@@ -47,5 +47,6 @@ span{
 }
 .selected{
     background:blue;
+    color:white;
   }
 </style>

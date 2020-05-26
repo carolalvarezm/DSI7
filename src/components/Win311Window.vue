@@ -2,7 +2,7 @@
   <div class='ventana'>
     <div class="barra">
       <p class="icono-barra">-</p>
-      <p>{{title}}</p>
+      <p>{{titulo}}</p>
       <p class="icono-barra">▼</p>
     </div>
     <div class="menu">
@@ -33,7 +33,7 @@ export default {
   data () {
     return {
       iconos: tipos[this.Tipo].icons,
-      title: tipos[this.Tipo].title
+      titulo: tipos[this.Tipo].title
     };
   },
   methods: {

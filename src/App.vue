@@ -1,6 +1,6 @@
 <template>
   <div id='app'>
-    <win311-icon Nombre='msdos' id="iconoexterior" @alert="alert"></win311-icon>
+    <win311-icon Nombre='msdos' id="iconoexterior" @alert="alert" @selected="unselect"></win311-icon>
     <win311-window Tipo='cpanel' id="ventana1" @alert="alert" @unselect="unselect"></win311-window>
     <win311-window Tipo='apps' id="ventana2" @alert="alert" @unselect="unselect"></win311-window>
   </div>
@@ -21,7 +21,9 @@ export default {
     },
     unselect: function (title) {
       this.$children.forEach(element => {
-        element.unselect(title);
+        if (element.title !== title) {
+          element.unselect(title);
+        }
       });
     }
   }
