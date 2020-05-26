@@ -10,7 +10,7 @@
       <p>Help</p>
     </div>
     <div class="iconos">
-    <win311-icon v-for="u in iconos" :key="u" :Nombre="u" @alert="alert"></win311-icon>
+    <win311-icon v-for="u in iconos" :key="u" :Nombre="u" @alert="alert" @selected="selected"></win311-icon>
     </div>
     <div class="ayuda">
       Select app to open...
@@ -39,6 +39,16 @@ export default {
   methods: {
     alert: function (title) {
       this.$emit("alert", title);
+    },
+    selected: function (title) {
+      this.$emit("unselect", title);
+    },
+    unselect: function (title) {
+      this.$children.forEach(element => {
+        if (title !== element.title) {
+          element.unselect();
+        }
+      });
     }
   }
 

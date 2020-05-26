@@ -20,9 +20,13 @@ export default {
   methods: {
     select: function (event) {
       document.querySelector(`.${this.title}`).classList.toggle("selected");
+      this.$emit("selected", this.title);
     },
     alert: function (event) {
       this.$emit("alert", this.title);
+    },
+    unselect: function () {
+      document.querySelector(`.${this.title}`).classList.remove("selected");
     }
   }
 };

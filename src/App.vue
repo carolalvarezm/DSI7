@@ -1,8 +1,8 @@
 <template>
   <div id='app'>
     <win311-icon Nombre='msdos' id="iconoexterior" @alert="alert"></win311-icon>
-    <win311-window Tipo='cpanel' id="ventana1" @alert="alert"></win311-window>
-    <win311-window Tipo='apps' id="ventana2" @alert="alert"></win311-window>
+    <win311-window Tipo='cpanel' id="ventana1" @alert="alert" @unselect="unselect"></win311-window>
+    <win311-window Tipo='apps' id="ventana2" @alert="alert" @unselect="unselect"></win311-window>
   </div>
 </template>
 
@@ -18,6 +18,11 @@ export default {
   methods: {
     alert: function (title) {
       alert(`Has seleccionado ${title}`);
+    },
+    unselect: function (title) {
+      this.$children.forEach(element => {
+        element.unselect(title);
+      });
     }
   }
 };
